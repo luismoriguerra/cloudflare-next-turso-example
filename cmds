@@ -1,0 +1,65 @@
+
+
+# installing drizzle
+https://orm.drizzle.team/docs/get-started-sqlite#turso
+
+npm i drizzle-orm @libsql/client
+npm i -D drizzle-kit
+
+touch drizzle.config.ts
+
+## turso
+https://docs.turso.tech/cli/db/create
+https://docs.turso.tech/local-development#turso-cli
+
+
+turso db create test-app-demo
+
+
+❯❯ turso db create test-app-demo
+Created group default at scl in 8.185s.
+Created database test-app-demo at group default in 2.006s.
+
+Start an interactive SQL shell with:
+
+   turso db shell test-app-demo
+
+To see information about the database, including a connection URL, run:
+
+   turso db show test-app-demo
+
+To get an authentication token for the database, run:
+
+   turso db tokens create test-app-demo
+
+
+turso db show test-app-demo
+
+❯❯ turso db show test-app-demo
+Name:           test-app-demo
+URL:            libsql://...
+
+turso db tokens create test-app-demo -e none
+❯❯ turso db tokens create test-app-demo -e none
+eyJhb...
+
+
+turso dev --db-file dev.db
+
+npx drizzle-kit generate:sqlite
+
+npx drizzle-kit push:sqlite
+
+drizzle-kit studio
+drizzle-kit studio --port 3000 ## custom port
+drizzle-kit studio --verbose   ## log all sql statements
+
+https://turso.tech/app/databases?selectedDbId=bbb6df13-25d3-4aef-be60-7422e3a885c3&databaseDetailsSheetOpen=true&drizzleOpen=true
+
+
+### cloudflare 
+https://dash.cloudflare.com/e47b6ea44ea56780643a31ea986ffd02/pages/view/nextclou/settings/environment-variables
+
+
+https://nextclou.pages.dev
+https://nextclou.pages.dev/api/hello
